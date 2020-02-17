@@ -1,16 +1,16 @@
 #!/bin/bash
 echo "Please provide the path to directory, where you want to run this script ..?";
-location=$1
-DIR="$location/android/app/src/main/assets"
+#location=$1
+DIR="android/app/src/main/assets"
 
 function apk_Builder(){
-	 cd $location/
+	 #cd $location/
          echo " Working directory is $PWD "
 
          npx react-native bundle --dev false --platform android --entry-file index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest ./android/app/src/main/res
 
          echo "Android directory "
-         cd $location/android/
+         cd android/
          echo " Working directory is $PWD "
 
          echo "Gradlew Process starts here "
@@ -19,7 +19,7 @@ function apk_Builder(){
 
          echo " ends here"
 
-         exit 0
+         #exit 0
 
 }
 
@@ -29,7 +29,7 @@ if [ -d "$DIR" ]; then
 else
 
   echo "The ${DIR} not found. So creating directory ${DIR}"
-  path=$location/android/app/src/main
+  path=android/app/src/main
 
   cd $path/
   mkdir assets
@@ -41,5 +41,3 @@ else
   echo "Directory ${DIR} has been created and proceeding further"
   apk_Builder
 fi
-
-
