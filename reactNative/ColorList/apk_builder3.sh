@@ -30,10 +30,10 @@ if [ -d "$DIR" ]; then
 else
 
   echo "The ${DIR} not found. So creating directory ${DIR}"
-  path=$location/android/app/src/main
+  #path=$location/android/app/src/main
 
-  cd $path/
-  mkdir assets
+  #mkdir $path/assets
+  mkdir $DIR
 
   if [ -d "$DIR" ]; then
   echo "Directory ${DIR} now exists and proceeding further"
