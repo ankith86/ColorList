@@ -11,7 +11,7 @@ function apk_Builder(){
          npx react-native bundle --dev false --platform android --entry-file index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest ./android/app/src/main/res
 
          echo "Android directory "
-         cd $location/android/
+         cd android/
          echo " Working directory is $PWD "
 
          echo "Gradlew Process starts here "
